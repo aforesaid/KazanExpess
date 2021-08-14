@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\KazanExpress.Parser.Domain\KazanExpress.Parser.Domain.csproj" />
+      <ProjectReference Include="..\KazanExpress.Parser.Infrastructure.Data\KazanExpress.Parser.Infrastructure.Data.csproj" />
     </ItemGroup>
 
 </Project>
