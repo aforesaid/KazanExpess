@@ -27,7 +27,7 @@ namespace KazanExpress.Parser.Test.UnitTests.ApiClient
         {
             const int categoryId = 1;
 
-            var response = await _apiClient.GetProductsByCategoryId(categoryId);
+            var response = await _apiClient.GetProductsByCategoryId(categoryId, 10);
             
             Assert.NotEmpty(response);
             Assert.NotEmpty(response.First().Badges);

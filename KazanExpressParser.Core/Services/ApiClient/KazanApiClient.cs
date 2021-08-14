@@ -25,11 +25,10 @@ namespace KazanExpressParser.Core.Services.ApiClient
             return response.CategoryPayload.Category;
         }
 
-        public async Task<ApiProductsByCategoriesItem[]> GetProductsByCategoryId(int categoryId)
+        public async Task<ApiProductsByCategoriesItem[]> GetProductsByCategoryId(int categoryId, int maxCountPage = 100)
         {
             var page = 1;
             const int sizeCount = 100;
-            const int maxPage = 100;
             var result = new List<ApiProductsByCategoriesItem>();
             
             ApiProductsByCategoriesResponse response;
@@ -39,7 +38,7 @@ namespace KazanExpressParser.Core.Services.ApiClient
                 response = await Get<ApiProductsByCategoriesResponse>(url);
                 result.AddRange(response.CategoryPayload.Products);
                 page++;
-            } while (response.CategoryPayload.Products.Count == sizeCount && page< maxPage);
+            } while (response.CategoryPayload.Products.Count == sizeCount && page <= maxCountPage);
 
             return result.ToArray();
         }
