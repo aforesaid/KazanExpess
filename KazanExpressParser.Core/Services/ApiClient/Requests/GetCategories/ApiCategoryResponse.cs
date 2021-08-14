@@ -5,12 +5,12 @@ namespace KazanExpressParser.Core.Services.ApiClient.Requests.GetCategories
     public class ApiCategoryResponse
     {
         [JsonProperty("payload")]
-        public Payload Payload { get; set; }
+        public CategoryPayload CategoryPayload { get; set; }
 
         [JsonProperty("error")]
         public object Error { get; set; }
     }
-    public class Payload
+    public class CategoryPayload
     {
         [JsonProperty("category")]
         public ApiCategoryItem Category { get; set; }

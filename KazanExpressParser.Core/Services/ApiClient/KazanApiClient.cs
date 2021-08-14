@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using KazanExpressParser.Core.Services.ApiClient.Base;
 using KazanExpressParser.Core.Services.ApiClient.Requests.GetCategories;
+using KazanExpressParser.Core.Services.ApiClient.Requests.GetProductsByCategories;
 
 namespace KazanExpressParser.Core.Services.ApiClient
 {
@@ -20,8 +22,26 @@ namespace KazanExpressParser.Core.Services.ApiClient
             var url = ApiClientEndpoints.GetCategories;
             var response = await Get<ApiCategoryResponse>(url);
 
-            return response.Payload.Category;
+            return response.CategoryPayload.Category;
         }
-        
+
+        public async Task<ApiProductsByCategoriesItem[]> GetProductsByCategoryId(int categoryId)
+        {
+            var page = 1;
+            const int sizeCount = 100;
+            const int maxPage = 100;
+            var result = new List<ApiProductsByCategoriesItem>();
+            
+            ApiProductsByCategoriesResponse response;
+            do
+            {
+                var url = ApiClientEndpoints.GetProductsByCategories(categoryId, page: page, sizeCount: sizeCount);
+                response = await Get<ApiProductsByCategoriesResponse>(url);
+                result.AddRange(response.CategoryPayload.Products);
+                page++;
+            } while (response.CategoryPayload.Products.Count == sizeCount && page< maxPage);
+
+            return result.ToArray();
+        }
     }
 }
