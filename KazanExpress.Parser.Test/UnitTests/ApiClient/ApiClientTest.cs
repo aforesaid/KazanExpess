@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using KazanExpressParser.Core.Services.ApiClient;
 using Xunit;
 
@@ -19,6 +20,18 @@ namespace KazanExpress.Parser.Test.UnitTests.ApiClient
            
             Assert.NotEmpty(response.Children);
             Assert.NotNull(response);
+        }
+
+        [Fact]
+        public async Task GetProductsByCategory()
+        {
+            const int categoryId = 1;
+
+            var response = await _apiClient.GetProductsByCategoryId(categoryId);
+            
+            Assert.NotEmpty(response);
+            Assert.NotEmpty(response.First().Badges);
+            Assert.NotNull(response.First().Offer);
         }
     }
 }
