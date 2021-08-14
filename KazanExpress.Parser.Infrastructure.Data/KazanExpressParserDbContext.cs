@@ -7,11 +7,11 @@ namespace KazanExpress.Parser.Infrastructure.Data
     {
         public DbSet<CategoryEntity> Categories { get; protected set; }
         public DbSet<ProductEntity> Products { get; protected set; }
-        protected KazanExpressParserDbContext() 
+        public KazanExpressParserDbContext() 
             : base()
         { }
 
-        protected KazanExpressParserDbContext(DbContextOptions<KazanExpressParserDbContext> options) 
+        public KazanExpressParserDbContext(DbContextOptions options) 
             : base(options)
         { }
 
