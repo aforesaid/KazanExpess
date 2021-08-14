@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KazanExpressParser", "KazanExpressParser", "{B7F394C1-5D36-40D2-8FB5-81B05F8769F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KazanExpressParser.Core", "KazanExpressParser.Core\KazanExpressParser.Core.csproj", "{89F91499-A241-4904-B947-F830BC66FC37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KazanExpress.Parser.Domain", "KazanExpress.Parser.Domain\KazanExpress.Parser.Domain.csproj", "{23B1048D-5FDF-40CB-9D62-F4E23CBFE607}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KazanExpress.Parser.Infrastructure.Data", "KazanExpress.Parser.Infrastructure.Data\KazanExpress.Parser.Infrastructure.Data.csproj", "{D363B289-FA67-4D31-9B94-8BB9E4539F8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89F91499-A241-4904-B947-F830BC66FC37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F91499-A241-4904-B947-F830BC66FC37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F91499-A241-4904-B947-F830BC66FC37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F91499-A241-4904-B947-F830BC66FC37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B1048D-5FDF-40CB-9D62-F4E23CBFE607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B1048D-5FDF-40CB-9D62-F4E23CBFE607}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B1048D-5FDF-40CB-9D62-F4E23CBFE607}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B1048D-5FDF-40CB-9D62-F4E23CBFE607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D363B289-FA67-4D31-9B94-8BB9E4539F8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D363B289-FA67-4D31-9B94-8BB9E4539F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D363B289-FA67-4D31-9B94-8BB9E4539F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D363B289-FA67-4D31-9B94-8BB9E4539F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89F91499-A241-4904-B947-F830BC66FC37} = {B7F394C1-5D36-40D2-8FB5-81B05F8769F6}
+		{23B1048D-5FDF-40CB-9D62-F4E23CBFE607} = {B7F394C1-5D36-40D2-8FB5-81B05F8769F6}
+		{D363B289-FA67-4D31-9B94-8BB9E4539F8C} = {B7F394C1-5D36-40D2-8FB5-81B05F8769F6}
+	EndGlobalSection
+EndGlobal
