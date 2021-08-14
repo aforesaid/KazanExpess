@@ -44,7 +44,8 @@ namespace KazanExpress.Parser.Infrastructure.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql( "User ID=postgres;Password=root;Server=localhost;Port=5432;Database=kazan-express-parser;Integrated Security=true;");
+                optionsBuilder.UseNpgsql( "User ID=postgres;Password=root;Server=localhost;Port=5432;Database=kazan-express-parser;Integrated Security=true;",
+                    npgsql => npgsql.MigrationsAssembly("KazanExpress.Parser.Infrastructure.Data"));
             }
 
             base.OnConfiguring(optionsBuilder);
@@ -65,7 +66,10 @@ namespace KazanExpress.Parser.Infrastructure.Data
                     existProduct.UpdateOrdersQuantity(productEntity.OrdersQuantity);
                     existProduct.UpdateSellPrice(productEntity.SellPrice);
                     existProduct.UpdateROrdersQuantity(productEntity.ROrdersQuantity);
+                    Products.Update(existProduct);
                 }
+
+                await SaveChangesAsync();
             }
         }
     }

@@ -27,7 +27,7 @@ namespace KazanExpressParser.Core.Services.ApiClient
 
         public async Task<ApiProductsByCategoriesItem[]> GetProductsByCategoryId(long categoryId, int maxCountPage = 100)
         {
-            var page = 1;
+            var page = 0;
             const int sizeCount = 100;
             var result = new List<ApiProductsByCategoriesItem>();
             
@@ -38,7 +38,7 @@ namespace KazanExpressParser.Core.Services.ApiClient
                 response = await Get<ApiProductsByCategoriesResponse>(url);
                 result.AddRange(response.CategoryPayload.Products);
                 page++;
-            } while (response.CategoryPayload.Products.Count == sizeCount && page <= maxCountPage);
+            } while (response.CategoryPayload.Products.Count == sizeCount && page < maxCountPage);
 
             return result.ToArray();
         }
