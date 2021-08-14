@@ -25,7 +25,7 @@ namespace KazanExpressParser.Core.Services.ApiClient
             return response.CategoryPayload.Category;
         }
 
-        public async Task<ApiProductsByCategoriesItem[]> GetProductsByCategoryId(int categoryId, int maxCountPage = 100)
+        public async Task<ApiProductsByCategoriesItem[]> GetProductsByCategoryId(long categoryId, int maxCountPage = 100)
         {
             var page = 1;
             const int sizeCount = 100;

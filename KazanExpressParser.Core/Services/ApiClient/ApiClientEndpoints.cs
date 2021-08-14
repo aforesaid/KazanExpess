@@ -6,7 +6,7 @@
 
         public const string GetCategories = "v2/main/search/category";
 
-        public static string GetProductsByCategories(int categoryId, int page = 1, int sizeCount = 100)
+        public static string GetProductsByCategories(long categoryId, int page = 1, int sizeCount = 100)
         {
             return $"v2/main/search/product?size={sizeCount}&page={page}&&categoryId={categoryId}";
         }

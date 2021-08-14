@@ -7,6 +7,6 @@ namespace KazanExpressParser.Core.Services.ApiClient
     public interface IKazanApiClient
     {
         Task<ApiCategoryItem> GetCategories();
-        Task<ApiProductsByCategoriesItem[]> GetProductsByCategoryId(int categoryId, int maxCountPage = 100);
+        Task<ApiProductsByCategoriesItem[]> GetProductsByCategoryId(long categoryId, int maxCountPage = 100);
     }
 }
