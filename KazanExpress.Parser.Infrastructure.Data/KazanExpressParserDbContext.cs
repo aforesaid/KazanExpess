@@ -17,12 +17,16 @@ namespace KazanExpress.Parser.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<CategoryEntity>().Property(x => x.Id)
+                .ValueGeneratedNever();
             modelBuilder.Entity<CategoryEntity>().HasKey(x => x.Id);
             modelBuilder.Entity<CategoryEntity>().HasIndex(x => x.Id);
             modelBuilder.Entity<CategoryEntity>().HasIndex(x => x.ProductAmount);
             modelBuilder.Entity<CategoryEntity>().HasIndex(x => x.Title);
             modelBuilder.Entity<CategoryEntity>().HasIndex(x => x.ProductIds);
 
+            modelBuilder.Entity<ProductEntity>().Property(x => x.Id)
+                .ValueGeneratedNever();
             modelBuilder.Entity<ProductEntity>().HasIndex(x => x.Id);
             modelBuilder.Entity<ProductEntity>().HasIndex(x => x.Rating);
             modelBuilder.Entity<ProductEntity>().HasIndex(x => x.Title);
