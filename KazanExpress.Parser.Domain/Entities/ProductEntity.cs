@@ -6,6 +6,8 @@ namespace KazanExpress.Parser.Domain.Entities
     {
         private const int TitleLength = 40;
 
+        private ProductEntity()
+        { }
         public ProductEntity(long productId, 
             string title,
             long sellPrice, 
