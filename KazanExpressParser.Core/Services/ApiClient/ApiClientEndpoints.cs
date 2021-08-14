@@ -2,8 +2,8 @@
 {
     public class ApiClientEndpoints
     {
-        public const string BaseAddress = "https://api.kazanexpress.ru/api/v2";
+        public const string BaseAddress = "https://api.kazanexpress.ru/api/";
 
-        public const string GetCategories = "/main/search/category";
+        public const string GetCategories = "v2/main/search/category";
     }
 }
