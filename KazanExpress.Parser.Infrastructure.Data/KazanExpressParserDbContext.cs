@@ -37,6 +37,7 @@ namespace KazanExpress.Parser.Infrastructure.Data
             modelBuilder.Entity<ProductEntity>().HasIndex(x => x.SellPrice);
             modelBuilder.Entity<ProductEntity>().HasIndex(x => x.ROrdersQuantity);
             modelBuilder.Entity<ProductEntity>().HasIndex(x => x.OrdersQuantity);
+            modelBuilder.Entity<ProductEntity>().HasIndex(x => x.CategoryName);
 
             base.OnModelCreating(modelBuilder);
         }

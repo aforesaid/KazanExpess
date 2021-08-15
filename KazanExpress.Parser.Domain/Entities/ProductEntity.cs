@@ -4,7 +4,8 @@ namespace KazanExpress.Parser.Domain.Entities
 {
     public class ProductEntity : Entity
     {
-        private const int TitleLength = 40;
+        private const int TitleLength = 1024;
+        private const int CategoryNameLength = 1024;
 
         private ProductEntity()
         { }
@@ -16,7 +17,8 @@ namespace KazanExpress.Parser.Domain.Entities
             long ordersQuantity, 
             long rOrdersQuantity, 
             long charityCommission,
-            bool isEco)
+            bool isEco,
+            string categoryName)
         {
             Id = productId;
             Title = title;
@@ -27,6 +29,7 @@ namespace KazanExpress.Parser.Domain.Entities
             ROrdersQuantity = rOrdersQuantity;
             CharityCommission = charityCommission;
             IsEco = isEco;
+            CategoryName = categoryName;
         }
 
         [StringLength(TitleLength)]
@@ -35,6 +38,7 @@ namespace KazanExpress.Parser.Domain.Entities
         public long SellPrice { get; private set; }
 
         public long FullPrice { get; private set; }
+        public string CategoryName { get; private set; }
 
         public double Rating { get;  private set; }
 

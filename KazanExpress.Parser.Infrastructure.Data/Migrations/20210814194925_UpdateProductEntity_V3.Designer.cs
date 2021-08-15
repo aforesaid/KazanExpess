@@ -3,15 +3,17 @@ using System;
 using KazanExpress.Parser.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace KazanExpress.Parser.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(KazanExpressParserDbContext))]
-    partial class KazanExpressParserDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210814194925_UpdateProductEntity_V3")]
+    partial class UpdateProductEntity_V3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

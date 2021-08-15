@@ -8,7 +8,7 @@ using KazanExpressParser.Core.Services.ApiClient.Requests.GetProductsByCategorie
 
 namespace KazanExpressParser.Core.Services.ApiClient
 {
-    public class KazanApiClient : ApiClientBase, IKazanApiClient
+    public class KazanApiClient : ApiClientBase, IKazanApiClient, IDisposable
     {
         public KazanApiClient()
         {
@@ -41,6 +41,11 @@ namespace KazanExpressParser.Core.Services.ApiClient
             } while (response.CategoryPayload.Products.Count == sizeCount && page < maxCountPage);
 
             return result.ToArray();
+        }
+
+        public void Dispose()
+        {
+            HttpClient.Dispose();
         }
     }
 }

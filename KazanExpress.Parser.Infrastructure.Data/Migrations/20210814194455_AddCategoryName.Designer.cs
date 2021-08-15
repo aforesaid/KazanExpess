@@ -3,15 +3,17 @@ using System;
 using KazanExpress.Parser.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace KazanExpress.Parser.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(KazanExpressParserDbContext))]
-    partial class KazanExpressParserDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210814194455_AddCategoryName")]
+    partial class AddCategoryName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,8 +100,8 @@ namespace KazanExpress.Parser.Infrastructure.Data.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Title")
-                        .HasMaxLength(1024)
-                        .HasColumnType("character varying(1024)");
+                        .HasMaxLength(40)
+                        .HasColumnType("character varying(40)");
 
                     b.Property<DateTime>("Updated")
                         .HasColumnType("timestamp without time zone");
